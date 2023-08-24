@@ -1,0 +1,172 @@
+<!-- Chetan Tyagi --> 
+<!-- 2 August 2023 --> 
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="icon" type="image/png" href="M1.png">
+    <meta charset="utf-8">
+    <title>Map Master</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <style>
+      #map {
+        position: fixed;
+  top: 56%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 350px;
+  width: 98%;
+  background: url('a2.jpg');
+  background-repeat: repeat;
+  border: 10px solid transparent;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  margin: 0 auto;
+  z-index: 1;
+
+      }
+      .text-center2 {
+        position: fixed;
+        left: 32%;
+
+        top: 15%;
+text-align: center;
+font-family: "Rockwell", serif;
+        font-size: 19px;
+}
+      .text-center {
+        position: fixed;
+  top: 88%;
+  left: 20%;
+text-align: center;
+font-family: "Rockwell", serif;
+        font-size: 19px;
+}
+.button {
+display: inline-block;
+padding: 12px;
+background: url('a2.jpg');
+font-family: "Rockwell", serif;
+top: 70%;
+
+font-size: 19px;
+color: rgb(236, 236, 236);
+background-color: rgb(142, 97, 0);
+text-align: center;
+text-decoration: none;
+cursor: pointer;
+margin: 10px;
+width: 550px;
+height: 50px;}
+      h1 {
+        font-family: "Rockwell", serif;
+        font-size: 24px;
+        text-align: center;
+        margin-top: 5px;
+        margin-bottom: 7px;
+      }
+      body {
+          background: url("b1.jpg");
+      }
+      #loading {
+  display: none;
+  position: fixed;
+  top: 5%;
+  left: 10%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  text-align: center;
+  font-family: "Rockwell", serif;
+  font-size: 18px;
+
+}
+.leaflet-control-attribution {
+  display: none !important;
+}
+#result {
+  position: fixed;
+  top: 8%;
+  font-family: "Rockwell", serif;
+  font-size: 18px;
+}
+#loading::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: calc(50% - 15px);
+  left: calc(50% + 110px);
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  margin-left: 8px;
+  border-radius: 50%;
+  border: 4px solid #ccc;
+  border-color: #a15d0a transparent #a15d0a transparent;
+  animation: loading 1.2s linear infinite;
+}
+
+
+#loading span {
+  display: inline-block;
+  margin-right: 8px;
+}
+
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+  
+}
+
+#new-game-button{        
+        color: rgb(255, 255, 255);
+        font-family: "Rockwell", serif;
+        font-size: 12px;
+        text-align: center;
+        width: 160px;
+        height: 30px;
+        background: url("a2.jpg");
+        position: absolute;
+        top: 90px;
+        right: 20px;
+
+      }
+#timer {
+  color: rgb(255, 255, 255);
+  position: fixed;
+
+        font-family: "Rockwell", serif;
+        font-size: px;
+        text-align: center;
+        width: 150px;
+        height: 50px;
+        background-color: rgba(174, 42, 42, 0.8);
+        position: absolute;
+        top: 2px;
+        right: 20px;
+        padding: 5px;
+        background: url("a2.jpg");
+
+      }
+    </style>
+  </head>
+  <body>
+    <a href="https://chetanty.github.io/mapmaster/" target="_blank" style="position: fixed; top: -62px; right: 500px;">
+      <img src="mm1.png" alt="Go to https://chetanty.github.io/mapmaster/" style="width: 190px; height: 180px; cursor: pointer;">
+    </a>
+    <div id="loading">Loading the coordinates...</div>
+    <p id="timer">Time Elapsed:<br> 0 seconds</p>
+    <div id="result"></div>
+    <div class="text-center2">Select a point on land and click on Guess to Begin</div>
+    <div id="map"></div>
+    <div class="text-center">
+      <input type="checkbox" id="show-coordinates">
+      <label for="show-coordinates">Show Coordinates</label>
+      <button id="guess-button" class="button">Guess City</button>
+    </div>
+    <button id="new-game-button" onclick="startNewGame()">New Game</button>    <div id="result"></div>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

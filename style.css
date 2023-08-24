@@ -1,0 +1,24 @@
+#map {
+  height: 500px;
+  width: 100%;
+
+}
+
+.button {
+  display: inline-block;
+  padding: 12px;
+  font-size: 18px;
+  color: white;
+  background-color: green;
+  border-radius: 50%;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  margin: 10px;
+}
+#result {
+  margin-top: 10px;
+  font-size: 20px;
+}
